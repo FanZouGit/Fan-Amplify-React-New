@@ -2,7 +2,18 @@ import React, { useState } from 'react';
 import { fetchAuthSession } from 'aws-amplify/auth';
 import awsExports from './aws-exports';
 
-const apiUrl = awsExports.aws_cloud_logic_custom[0].endpoint;
+if (
+  awsExports.aws_cloud_logic_custom &&
+  Array.isArray(awsExports.aws_cloud_logic_custom) &&
+  awsExports.aws_cloud_logic_custom.length > 0
+) {
+  const apiUrl = awsExports.aws_cloud_logic_custom[0].endpoint;
+  // You can safely use apiUrl here
+  console.log('API URL:', apiUrl);
+} else {
+  // Handle the case where no custom APIs are defined
+  console.error('No custom API endpoints are defined in aws_cloud_logic_custom.');
+}
 
 export default function Upload() {
   const [file, setFile] = useState(null);
