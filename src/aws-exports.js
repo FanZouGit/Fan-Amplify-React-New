@@ -12,7 +12,7 @@ const awsmobile = {
     "aws_cloud_logic_custom": [
         {
             "name": "PresignedURLHttpAPI",
-            "endpoint": "https://if32vp9sxd.execute-api.us-east-1.amazonaws.com",
+            "endpoint": "https://if32vp9sxd.execute-api.us-east-1.amazonaws.com/generate-url",
             "region": "us-east-1"
         }
     ]
